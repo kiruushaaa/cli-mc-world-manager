@@ -5,6 +5,7 @@ This is a simple bash script to sync Minecraft saves from a local machine to `Ba
 ## Requirements
 
 - MacOS (`nbt2json` binary is built for MacOS)
+- `jq`, `fswatch` ClI utilities
 - Backblaze B2 bucket
 - Minecraft installed on the local machine
 
