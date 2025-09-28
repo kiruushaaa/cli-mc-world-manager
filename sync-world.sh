@@ -9,14 +9,18 @@ DOWNLOAD_FILE_NAME="world.gz"
 SAVES_PATH=~/Library/Application\ Support/minecraft/saves/
 WORLD_SAVE_PATH=kirill
 LUNAR_HOST_CONFIG=lunar_hosted_world_data.json
+SNAPSHOT_DIR=world-snapshots
 
 cd "$SAVES_PATH"
 
 # download world
 b2 file download b2://${B2_BUCKET}/${B2_WORLD_GZIP_KEY} ${DOWNLOAD_FILE_NAME}
 
+# move old world
+mkdir -p ${SNAPSHOT_DIR}
+mv ${WORLD_SAVE_PATH}/ ${SNAPSHOT_DIR}/${WORLD_SAVE_PATH}-$(date +%Y-%m-%d)/
+
 # replace locally saved world
-rm -r ${WORLD_SAVE_PATH}
 tar -xf ${DOWNLOAD_FILE_NAME}
 rm  ${DOWNLOAD_FILE_NAME}
 

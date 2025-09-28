@@ -21,4 +21,4 @@ This is a simple bash script to sync Minecraft saves from a local machine to `Ba
    CMND + Shift + G => ~/Library/Application Support/minecraft/saves
    ```
 
-The script `sync-world.sh` will download the Minecraft save from Backblaze B2, replace the local save with the downloaded one and remove player data from `local.dat`.
+The script `sync-world.sh` will download the Minecraft save from Backblaze B2, replace the local save with the downloaded one and remove player data from `local.dat`. The local save will be moved to the `/world-snapshots/` directory.
